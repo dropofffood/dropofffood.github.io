@@ -41,7 +41,7 @@
         }
         .right-nav a {
             line-height: 85px;
-            color: rgba(255, 255, 255, 0.6);;
+            color: rgba(255, 255, 255, 0.6);
             text-decoration: none;
             font-family: HelveticaNeue-Light;
             transition: 0.3s;
@@ -84,9 +84,52 @@
         .title {
             font-family: Beat;
             font-size: 60pt;
+            color: rgba(255, 255, 255, 0.7);
+        }
+        .clear-text-box {
+            border: 3px solid rgba(255, 255, 255, 0.4);
+            border-radius: 5px;
+            font-size: 20pt;
+            background-color: rgba(255, 255, 255, 0.4);
             color: white;
+            transition: 0.5s;
+            outline:none;
+            padding: 5px 7px;
+
+        }
+        ::-webkit-input-placeholder {
+           color: rgba(255, 255, 255, 0.4);
+        }
+
+        :-moz-placeholder { /* Firefox 18- */
+           color: red;  
+        }
+
+        ::-moz-placeholder {  /* Firefox 19+ */
+           color: red;  
+        }
+
+        :-ms-input-placeholder {  
+           color: red;  
         }
         </style>
+        <script type="text/javascript" src="jquery.js"></script>
+        <script type="text/javascript">
+        $(function() {
+          $('a[href*=#]:not([href=#])').click(function() {
+            if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+              var target = $(this.hash);
+              target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+              if (target.length) {
+                $('html,body').animate({
+                  scrollTop: target.offset().top
+                }, 300);
+                return false;
+              }
+            }
+          });
+        });
+        </script>
     </head>
     <body>
         <div class="header">
@@ -95,15 +138,14 @@
         <div class="header-content">
             <img src="Dropoff Logo-White.png" height="70" class="logo">
             <div class="right-nav">
-                <a href="#">Home</a>
-                <a href="#">About</a>
-                <a href="#">Marketing</a>
-                <a href="#">Finance</a>
-                <a href="#">Goals</a>
+                <a href="#home">Home</a>
+                <a href="#about">What</a>
+                <a href="#why">Why</a>
+                <a href="#how">How</a>
                 <a href="#">Contact</a>
             </div>
             </div>
-        <div class="home">
+        <div class="home" id="home">
             <div class="container">
                 <center>
                     <img src="Dropoff Logo-White.png">
@@ -113,7 +155,7 @@
                 </center>
             </div>
         </div>
-        <div class="about">
+        <div class="about" id="about">
             <div class="container">
                 <center>
                     <span class="title">What Do We Do?</span>
@@ -123,13 +165,37 @@
                 </center>
             </div>  
         </div>
-        <div class="marketing">
+        <div class="marketing" id="why">
+            <div class="container">
+                <center>
+                    <span class="title">Why Are We Doing It?</span>
+                    <br>
+                    <br>
+                    <span class="text-bg">You tell us what you want. We deliver. <br>So you can do what you need to, when you need to.</span>
+                </center>
+            </div>  
         </div>
-        <div class="finance">
-        </div>
-        <div class="goals">
+        <div class="finance" id="how">
+            <div class="container">
+                <center>
+                    <span class="title">How Does It Work?</span>
+                    <br>
+                    <br>
+                    <span class="text-bg">Search. Order. Deliver.<br>Right from our mobile app or website.<br>And then you get rewarded. With discounts.<br>How simple is that?</span>
+                </center>
+            </div> 
         </div>
         <div class="contact">
+            <div class="container">
+                <center>
+                    <span class="title">Contact Us!</span>
+                    <br>
+                    <br>
+                    <span class="text-bg">Sign up for the mailing list. We promise we won't spam.</span>
+                    <br>
+                    <input type="text" class="clear-text-box" placeholder="Email">
+                </center>
+            </div> 
         </div>
     </body>
 </html>

@@ -1,16 +1,33 @@
 <html>
     <head>
         <style>
+        @font-face {
+            font-family: Beat;
+            src: url("abeatbyKaiRegular.otf") format("opentype");
+        }
         body {
             margin: 0;
             padding: 0;
             font-family: HelveticaNeue-Light;
         }
         .header {
-            background-color: rgba(250, 250, 250, 0.3);
+            background-color: rgb(250, 250, 250);
             position: fixed;
             height: 100px;
             width: 100%;
+            /*-webkit-filter: blur(20px);
+            -moz-filter: blur(15px);
+            -o-filter: blur(15px);
+            -ms-filter: blur(15px);
+            filter: blur(15px);*/
+            opacity: 0.4;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        .header-content {
+            height: 100px;
+            width: 100%;
+            position: fixed;
         }
         .logo {
             position: relative;
@@ -61,10 +78,21 @@
             font-size: 30pt;
             font-family: HelveticaNeue-UltraLight;
         }
+        .about {
+            background-color: rgb(0, 157, 246);
+        }
+        .title {
+            font-family: Beat;
+            font-size: 60pt;
+            color: white;
+        }
         </style>
     </head>
     <body>
         <div class="header">
+            
+        </div>
+        <div class="header-content">
             <img src="Dropoff Logo-White.png" height="70" class="logo">
             <div class="right-nav">
                 <a href="#">Home</a>
@@ -74,8 +102,7 @@
                 <a href="#">Goals</a>
                 <a href="#">Contact</a>
             </div>
-            
-        </div>
+            </div>
         <div class="home">
             <div class="container">
                 <center>
@@ -87,6 +114,14 @@
             </div>
         </div>
         <div class="about">
+            <div class="container">
+                <center>
+                    <span class="title">What Do We Do?</span>
+                    <br>
+                    <br>
+                    <span class="text-bg">We revolutionize. We innovate. <br> We deliver food 24/7 and offer numerous <br>discounts for nearby resturants.</span>
+                </center>
+            </div>  
         </div>
         <div class="marketing">
         </div>
